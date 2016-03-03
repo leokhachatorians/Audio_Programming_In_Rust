@@ -1,0 +1,6 @@
+[package]
+name = "musical_scales"
+version = "0.1.0"
+authors = ["leokhachatorians <leokhachatorians@gmail.com>"]
+
+[dependencies]
