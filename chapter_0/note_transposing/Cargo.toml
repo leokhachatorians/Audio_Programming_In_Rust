@@ -1,0 +1,6 @@
+[package]
+name = "note_transposing"
+version = "0.1.0"
+authors = ["leokhachatorians <leokhachatorians@gmail.com>"]
+
+[dependencies]
