@@ -8,24 +8,27 @@ fn main() {
     let c0 = c5 * 0.5_f64.powf(5.0);
 
     let midinote = get_midinote();
-    if midinote > 127.0 {
+    if midinote > 127 {
         println!("{} is above the MIDI range, try again.", midinote);
     }
+    else if midinote < 0 {
+        println!("{} is belove the MIDI range, try again.", midinote);
+    }
     else {
-        let frequency = c0 * semitone_ratio.powf(midinote);
+        let frequency = c0 * semitone_ratio.powf(midinote as f64);
         println!("MIDI Note {0} has frequency {1}", midinote, frequency);
     }
 }
 
-fn get_midinote() -> f64 {
+fn get_midinote() -> i32 {
     println!("Enter a midi note: ");
     let mut midinote = String::new();
     io::stdin().read_line(&mut midinote)
         .expect("Error Reading Line");
     
-    let midinote: f64 = match midinote.trim().parse() {
+    let midinote: i32 = match midinote.trim().parse() {
         Ok(num) => num,
-        Err(_) => { println!("Error, not a number: {0}", midinote); get_midinote() }
+        Err(_) => { println!("Error, {} is not an integer", midinote.trim()); get_midinote() }
     };
 
     midinote
