@@ -1,0 +1,6 @@
+[package]
+name = "midi_note_frequency_calculator"
+version = "0.1.0"
+authors = ["leokhachatorians <leokhachatorians@gmail.com>"]
+
+[dependencies]
