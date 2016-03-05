@@ -8,10 +8,13 @@ fn main() {
     let c0 = c5 * 0.5_f64.powf(5.0);
 
     let midinote = get_midinote();
-
-    let frequency = c0 * semitone_ratio.powf(midinote);
-
-    println!("MIDI Note {0} has frequency {1}", midinote, frequency);
+    if midinote > 127.0 {
+        println!("{} is above the MIDI range, try again.", midinote);
+    }
+    else {
+        let frequency = c0 * semitone_ratio.powf(midinote);
+        println!("MIDI Note {0} has frequency {1}", midinote, frequency);
+    }
 }
 
 fn get_midinote() -> f64 {
