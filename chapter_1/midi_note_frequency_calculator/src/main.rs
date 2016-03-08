@@ -1,6 +1,5 @@
 use std::io;
 use std::env;
-use std::io::Write;
 
 macro_rules! error {
     ($code: expr, $fmt:expr) => {{
@@ -31,8 +30,9 @@ fn main() {
 
         *arg_midinote = match args[1].parse::<i32>() {
             Ok(num) => num,
-            Err(_) => error!(1, "Error: Argument was not an integer")
+            Err(_) => { println!("Error: Not an argument"); return; }
         };
+        return;
     }
     else {
         let no_arg_midinote = &mut midinote;
