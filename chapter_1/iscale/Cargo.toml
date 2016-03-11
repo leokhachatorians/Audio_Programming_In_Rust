@@ -1,0 +1,7 @@
+[package]
+name = "iscale"
+version = "0.1.0"
+authors = ["leokhachatorians <leokhachatorians@gmail.com>"]
+
+[dependencies]
+getopts = "0.2"
